@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/admin.css">
+    <link rel="stylesheet" href="/stylesheets/newuser.css">
+    <title>Xpro || users</title>
+    <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+    <header>
+        <span>
+            <h1>Xpro||admin</h1>
+        </span>
+        <span id="search">
+            <form action="/admin" method="POST">
+                <span class="search">
+                    <input type="text" name="user" placeholder="enter a username">
+                    <button type="submit">🔍</button>
+                </span>
+            </form>
+        </span>
+        <span class="profile">
+            <span>
+                <span>
+                    <h1>
+                        <%= data.name %>
+                    </h1>
+                    <button id="profile-dropdown">🔽</button>
+                </span>
+                <span id="dropdown">
+                    <ul>
+                        <li><a href="">profile</a></li>
+                        <li><a href="/signout">signout</a></li>
+                    </ul>
+                </span>
+            </span>
+        </span>
+    </header>
+
+    <% if(pass){ %>
+        <dialog open>
+            <p>user is already registred</p>
+            <form method="dialog">
+                <button>OK</button>
+            </form>
+        </dialog>
+    <%} %>
+
+    <section>
+        <nav>
+            <ul>
+                <li><a href="/admin">🏠 Home</a></li>
+                <li><a href="/admin/newuser">👥New Users</a></li>
+            </ul>
+        </nav>
+        <article>
+            <div class="box">
+                <form action="/admin/newuser" method="POST">
+                    <div class="input">
+                        <input type="text" name="username" placeholder="Enter username" required>
+                        <input type="text" name="name" placeholder="Enter Name" required>
+                        <input type="password" name="password" placeholder="Enter password" required>
+                    </div>
+                    <div class="input_admin">
+                        <div class="input_admin_1">
+                            <p>admin access</p>
+                        </div>
+                        <div class="input_admin_2">
+                            <label for="true">True</label>
+                            <input type="radio" id="true" name="admin_access" value="true" required>
+                            <label for="false">False</label>
+                            <input type="radio" id="false" name="admin_access" value="false" required>
+                        </div>
+                    </div>
+                    <div class="button">
+                        <button type="submit">submit</button>
+                    </div>
+                </form>
+            </div>
+        </article>
+    </section>
+
+
+
+    <%- include('./partials/footer.ejs') %>
+        <script src='/javascripts/user.js'></scriptsrc></script>
+</body>
+
+</html>

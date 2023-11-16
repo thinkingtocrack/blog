@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <meta name="description" content="bloging">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <header>
+      <h1>Xpro</h1>
+    </header>
+
+    <% if(pass){ %>
+    <dialog open>
+      <p>not authorized,please login again</p>
+      <form method="dialog">
+        <button>OK</button>
+      </form>
+    </dialog>
+    <% }else if(valid){ %>
+      <dialog open>
+      <p>invalid user-name or password</p>
+      <form method="dialog">
+        <button>OK</button>
+      </form>
+    </dialog>
+    <% } %>
+
+    <section>
+      <div class="login-box">
+        <form action="/auth" method="POST">
+          <div class="login-form">
+            <input type="text" placeholder="Username" name="email">
+            <input type="password" placeholder="password" name="password">
+            <a href="">forgot password</a>
+            <button type="submit">Login</button>
+          </div>
+        </form>
+      </div>
+    </section>
+    <%- include('./partials/footer.ejs') %>
+  </body>
+</html>

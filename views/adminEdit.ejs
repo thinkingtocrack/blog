@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/edit.css">
+    <title>Xpro || users-edit</title>
+</head>
+
+<body>
+    <header>
+        <span>
+            <h1>Xpro</h1>
+        </span>
+        <span class="profile">
+            <span>
+                <h1><%= data.name %></h1>
+                <button id="profile-dropdown">🔽</button>
+            </span>
+            <span id="dropdown">
+                <ul>
+                    <li><a href="">profile</a></li>
+                    <li><a href="/signout">signout</a></li>
+                </ul>
+            </span>
+        </span>
+    </header>
+
+
+    <% if(locals.passworderr){ %>
+        <dialog open>
+            <p>password error</p>
+            <form method="dialog">
+                <button>OK</button>
+            </form>
+        </dialog>
+        <% }%>
+
+
+    <section>
+        <nav>
+            <ul>
+                <li><a href="/admin">🏠 Home</a></li>
+            </ul>
+        </nav>
+        <article>
+            <form action="/admin/edit/submit" method="POST">
+                <input type="hidden" name="original" value="<%= user[0].username %>">
+                <div class="table">
+                <table>
+                    <tr>
+                        <th>Field</th>
+                        <th>current</th>
+                        <th>new</th>
+                    </tr>
+                    <tr>
+                        <td>username</td>
+                        <td><%= user[0].username %></td>
+                        <td><input type="text" name="username" ></td>
+                    </tr>
+                    <tr>
+                        <td>name</td>
+                        <td><%= user[0].name %></td>
+                        <td><input type="text" name="name"></td>
+                    </tr>
+                    <tr>
+                        <td>password</td>
+                        <td><%= user[0].password%></td>
+                        <td><input type="text" name="password" ></td>
+                    </tr>
+                    <tr>
+                        <td>admin access</td>
+                        <td><%= user[0].admin_access %></td>
+                        <td>
+                            <label for="true">true</label>
+                            <input id="true" type="radio" value="true" name="admin_access">
+                            <label for="false">false</label>
+                            <input id="false" type="radio" value="false" name="admin_access" checked>
+                        </td>
+                    </tr>
+                </table>
+                <button type="submit">submit</button>
+                </div>
+            </form>
+        </article>
+    </section>
+
+
+
+    <%- include('./partials/footer.ejs') %>
+        <script src='/javascripts/user.js'></scriptsrc></script>
+</body>
+
+</html>

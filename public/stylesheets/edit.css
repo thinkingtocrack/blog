@@ -1,0 +1,173 @@
+body {
+    background-color: black;
+    margin: 0;
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-weight: bold
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 60px;
+    border-bottom-right-radius: 10px;
+    background-color: rgb(45, 45, 45);
+    margin-bottom: 2px;
+}
+
+
+.profile {
+    border: solid 2px white;
+    border-radius: 5px;
+    right: 0;
+    margin: 8px 10px;
+    padding: 0 5px 0 8px;
+    background-color: rgb(255, 88, 88);
+}
+
+.profile h1 {
+    display: inline;
+    float: left;
+    margin: 0;
+    color: rgb(0, 0, 0)
+}
+
+#profile-dropdown {
+    float: left;
+    background-color: rgb(255, 88, 88);
+    border: none;
+    padding: 0;
+    margin-top: 8px;
+    font-size: x-large;
+}
+
+#dropdown {
+    display: none;
+}
+
+#dropdown ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#dropdown a {
+    text-decoration: none;
+    color: white;
+    font-size: larger;
+}
+
+
+
+section {
+    display: flex;
+    min-height: 100vh;
+}
+
+nav {
+    background-color: rgb(45, 45, 45);
+    padding-right: 50px;
+    flex: 0 0 250px
+}
+
+nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-size: x-large;
+    list-style: none;
+}
+article{
+    flex: 1;
+    padding: 4px;
+}
+
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: solid 4px gray;
+}
+
+table th {
+    background-color: rgb(255, 88, 88);
+    border: solid 1px rgb(255, 255, 255);
+    text-align: center;
+    height: 60px;
+    word-wrap: normal;
+    font-size: x-large;
+}
+
+table td {
+    border: solid 1px rgb(255, 255, 255);
+    text-align: center;
+    word-break:break-all;
+    height: 50px;
+    font-size: large;
+}
+
+
+
+
+table tr:nth-child(even) {
+    background-color: rgb(66, 66, 66);
+}
+
+
+.table{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.table button{
+    width: 200px;
+    flex:0 0 60px;
+    background-color: gray;
+    color: rgb(0, 0, 0);
+    border: 0px;
+    border-radius: 20px;
+    font-size: large;
+}
+.table input{
+    border-radius: 10px;
+    height: 30px;
+}
+
+
+
+
+
+@media(max-width:1000px) {
+    section {
+        flex-direction: column;
+    }
+
+    nav {
+        flex: 0 0 100px;
+    }
+
+    nav ul {
+        flex-direction: row;
+    }
+}
+
+dialog {
+    position: absolute;
+    top: 1%;
+    border-radius: 20px;
+    background-color: rgb(255, 88, 88);
+    border: solid 2px rgb(93, 255, 123);
+}
+
+dialog button {
+    width: 70px;
+    height: 30px;
+    border-radius: 10px;
+    margin-left: 80px;
+}
+
+
+

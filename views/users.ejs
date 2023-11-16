@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/user.css">
+    <title>Xpro || users</title>
+</head>
+<body>
+    <header>
+        <span>
+            <h1>Xpro</h1>
+        </span>
+        <span id="search">
+            <form action="/users/search">
+                <span class="search">
+                    <input type="text" name="blog" placeholder="search for a blog">
+                    <button type="submit">🔍</button>
+                </span>
+            </form>
+        </span>
+        <div class="profile">
+            <span id="profile_inner">
+                <h1><%= user.name %></h1>
+                <button id="profile-dropdown">🔽</button>
+            </span>
+            <span id="dropdown">
+                <ul>
+                    <li><a href="">profile</a></li>
+                    <li><a href="/signout">signout</a></li>
+                </ul>
+            </span>
+        </div>
+    </header>
+
+    <section>
+        <nav>
+            <ul>
+                <li>🏠 Home</li>
+                <li>✉️ New Blog</li>
+                <li>🔍 Search</li>
+                <li>🔔 Notification</li>
+            </ul>
+        </nav>
+        <article>
+            <h1 style="text-align: center;font-size: xx-large;">Blogs</h1>
+            <ol>
+                <%blog.forEach(element => { %>
+                    <li>
+                        <h1>Title:<%=element.blog.title  %></h1>
+                        <p><%= element.blog.content %></p>
+                    </li>
+                <% }) %>
+            </ol>
+        </article>
+    </section>
+
+    
+
+    <%- include('./partials/footer.ejs') %>
+    <script src='/javascripts/user.js'></scriptsrc></script>
+</body>
+</html>
+
+

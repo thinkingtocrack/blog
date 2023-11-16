@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/admin.css">
+    <title>Xpro || users</title>
+    <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+    <header>
+        <span>
+            <h1>Xpro</h1>
+        </span>
+        <span id="search">
+            <form action="/admin" >
+                <span class="search">
+                    <input type="text" name="user" placeholder="enter a username">
+                    <button type="submit">🔍</button>
+                </span>
+            </form>
+        </span>
+        <div class="profile">
+            <span id="profile_inner">
+                <h1><%= user.name %></h1>
+                <button id="profile-dropdown">🔽</button>
+            </span>
+            <span id="dropdown">
+                <ul>
+                    <li><a href="">profile</a></li>
+                    <li><a href="/signout?name=admin">signout</a></li>
+                </ul>
+            </span>
+        </div>
+    </header>
+
+    <section>
+        <nav>
+            <ul>
+                <li><a href="/admin">🏠 Home</a></li>
+                <li><a href="/admin/newuser">👥New Users</a></li>
+            </ul>
+        </nav>
+        <article>
+            <table>
+                <tr>
+                    <th>🆔User</th>
+                    <th>🪪Name</th>
+                    <th>🔑Hashed Password</th>
+                    <th>🔓Admin Access</th>
+                    <th>📝Edit</th>
+                    <th>🗑️ delete</th>
+                </tr>
+                <% data.forEach(element => { %>
+                    <tr>
+                        <td><%= element.username %></td>
+                        <td><%= element.name %></td>
+                        <td><%= element.password %></td>
+                        <td><%= element.admin_access %></td>
+                        <td>
+                            <form action="/admin/edit" method="POST">
+                                <input type="hidden" value="<%= element.username %>" name="user">
+                                <button type="submit">✏️</button>
+                            </form>
+                        </td>
+                        <td>
+                            <form action="/admin/delete" method="POST">
+                                <input type="hidden" value="<%= element.username %>" name="username">
+                                <button type="submit" onclick="return conform('<%=element.username%>')">❌</button>
+                            </form>
+                        </td>
+                    </tr>
+                <% }) %>
+            </table>
+        </article>
+    </section>
+
+
+
+    <%- include('./partials/footer.ejs') %>
+    <script src='/javascripts/user.js'></scriptsrc></script>
+</body>
+
+</html>
