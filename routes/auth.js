@@ -36,24 +36,3 @@ router.post('/',async(req,res)=>{
 })
 
 module.exports=router;
-
-
-// router.post('/',async(req,res)=>{ 
-//     const user= await users.findOne({username:req.body.email},{password:1,admin_access:1,name:1})
-//     if(user){
-//         if(user.password===req.body.password){
-//             if(user.admin_access){
-//                 req.session.auth=true;
-//                 req.session.data=user;
-//                 res.redirect('/admin')
-//             }else{
-//                 req.session.auth=true;
-//                 res.redirect('/users')
-//             }
-//         }else{
-//             res.redirect('/?login=invalid')
-//         }
-//     }else{
-//         res.redirect('/?login=invalid')
-//     }
-// })
