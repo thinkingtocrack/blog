@@ -29,11 +29,11 @@
 
     <section>
       <div class="login-box">
-        <form action="/auth" method="POST">
+        <form action="<% if(locals.admin){%>/auth?admin=true<% }else{ %>/auth<% } %>"method="POST">
           <div class="login-form">
-            <input type="text" placeholder="Username" name="email">
-            <input type="password" placeholder="password" name="password">
-            <a href="">forgot password</a>
+            <input type="text" placeholder="Username" name="email" required>
+            <input type="password" placeholder="password" name="password" required>
+            <a href="/signup">new user</a>
             <button type="submit">Login</button>
           </div>
         </form>

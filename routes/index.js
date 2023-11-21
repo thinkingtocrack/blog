@@ -17,7 +17,7 @@ router.get('/ad', function(req, res) {
   if(req.session.authadmin){
     res.redirect('/admin')
   }else{
-    res.render('index', { title: 'Xpro',pass:'',valid})
+    res.render('index', { title: 'Xpro',pass:'',valid,admin:true})
   }
 });
 

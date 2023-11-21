@@ -7,6 +7,7 @@ const bcrypt=require('bcrypt')
 
 mongoose.connect('mongodb://127.0.0.1:27017/xpro')
 
+
 const seq=(req,res,next)=>{
     if(req.session.authadmin){
         res.setHeader('Cache-Control', 'no-store');
@@ -42,6 +43,7 @@ router.post('/delete',seq,async(req,res)=>{
 router.get('/newuser',seq,async(req,res)=>{
     res.render('newuser',{pass:false,data:req.session.data})
 })
+
 
 router.post('/newuser',seq,async(req,res)=>{
     let data=req.body

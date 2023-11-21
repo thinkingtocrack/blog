@@ -1,10 +1,11 @@
-article{
+article {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.box{
-    border: solid 1px white ;
+
+.box {
+    border: solid 1px white;
     border-radius: 10px;
     background-color: rgb(215, 215, 215);
     width: 500px;
@@ -12,18 +13,21 @@ article{
     padding: 0 15px 0 15px;
     margin-bottom: 20%;
 }
+
 .input {
     padding: 25px 0 0 0;
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
-.input input{
+
+.input input {
     border: 0px;
     height: 40px;
     border-radius: 10px;
 }
-.input_admin{
+
+.input_admin {
     border: solid 2px black;
     border-radius: 10px;
     height: 40px;
@@ -31,32 +35,39 @@ article{
     display: flex;
     align-items: center;
 }
-.input_admin p{
+
+.input_admin p {
     color: black;
     font-size: x-large;
 }
-.input_admin_1{
+
+.input_admin_1 {
     flex-grow: 1;
     padding-left: 40px;
 }
-.input_admin_2{
+
+.input_admin_2 {
     flex-grow: 2;
 }
-.input_admin_2{
+
+.input_admin_2 {
     color: black;
 }
-.button{
+
+.button {
     display: flex;
     padding: 30px;
     justify-content: center;
 }
-.button button{
+
+.button button {
     width: 150px;
     height: 50px;
     border: none;
     border-radius: 10px;
     font-size: large;
 }
+
 dialog {
     position: absolute;
     top: 30px;

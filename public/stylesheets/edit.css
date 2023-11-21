@@ -78,7 +78,8 @@ nav ul {
     font-size: x-large;
     list-style: none;
 }
-article{
+
+article {
     flex: 1;
     padding: 4px;
 }
@@ -103,7 +104,7 @@ table th {
 table td {
     border: solid 1px rgb(255, 255, 255);
     text-align: center;
-    word-break:break-all;
+    word-break: break-all;
     height: 50px;
     font-size: large;
 }
@@ -116,22 +117,24 @@ table tr:nth-child(even) {
 }
 
 
-.table{
+.table {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
 }
-.table button{
+
+.table button {
     width: 200px;
-    flex:0 0 60px;
+    flex: 0 0 60px;
     background-color: gray;
     color: rgb(0, 0, 0);
     border: 0px;
     border-radius: 20px;
     font-size: large;
 }
-.table input{
+
+.table input {
     border-radius: 10px;
     height: 30px;
 }
@@ -168,6 +171,3 @@ dialog button {
     border-radius: 10px;
     margin-left: 80px;
 }
-
-
-

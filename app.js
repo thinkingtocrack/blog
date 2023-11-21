@@ -25,6 +25,7 @@ const usersRouter = require('./routes/users');
 const adminRouter = require('./routes/admin');
 const authRouter = require('./routes/auth');
 const signout=require("./routes/signout")
+const signup=require('./routes/signup')
 
 
 app.use('/', indexRouter);
@@ -32,6 +33,7 @@ app.use('/users', usersRouter);
 app.use('/admin',adminRouter);
 app.use('/auth',authRouter);
 app.use('/signout',signout)
+app.use('/signup',signup)
 
 app.listen(4000,()=>{
   console.log('server started in localhost:4000')
