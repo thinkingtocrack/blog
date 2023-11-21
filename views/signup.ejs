@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel='stylesheet' type='text/css' href='/stylesheets/signup.css'>
+</head>
+<body>
+    <% if(locals.pass){ %>
+        <dialog open>
+            <p>user is already registred</p>
+            <form method="dialog">
+                <button>OK</button>
+            </form>
+        </dialog>
+        <%} %>
+    <form action="/signup" method="POST">
+        <div class="signup">
+            <h1>sign up</h1>
+            <p style="color: rgb(103, 102, 102);font-size: 16px;">It's quick and easy.</p>
+            <hr style="border: 1px solid lightgray;">
+            <div class="name">
+                <input id="first-name"  type="text" placeholder="First name" name="fname">
+                <input id="last-name" type="text" placeholder="Surname" name="sname">
+            </div>
+            <div class="rest">
+                <input id="email" type="text" placeholder="Mobile number or email address" name="username">
+                <input id="password" type="password" placeholder="New password" name='password'>
+            </div>
+            <!-- <p>Date of birth</p> -->
+            <!-- <div class="date">
+                <select id="dayDropdown"></select>
+                <select id="monthDropdown"></select>
+                <select id="yearDropdown"></select>
+            </div> -->
+            <!-- <p>Gender</p>
+            <div class="gender">
+            <label>Female
+                <input class="radio" type="radio" name="female" >
+            </label>
+            <label>Male
+                <input class="radio" type="radio" name="female" >
+            </label>
+            <label>Custom
+                <input class="radio" type="radio" name="female" >
+            </label>
+            </div> -->
+            <p>People who use our service may have uploaded your contact information to Xpro.<a href=""> Learn more.</a></p>
+            <p>By clicking Sign Up, you agree to our Terms, Privacy Policy and Cookies Policy. You may receive SMS notifications from us and can opt out at any time.</p>
+            <button type="submit">signup</button>
+        </div>
+    </form>
+    <script>
+        const day=document.querySelector('#dayDropdown');
+        for(i=1;i<=31;i++){
+            day.innerHTML+=`<option>${i}</option`;
+            }
+        months=['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec']
+        const month=document.querySelector('#monthDropdown');
+        for(i=0;i<12;i++){
+            month.innerHTML+=`<option>${months[i]}</option`;
+            }
+        const year=document.querySelector('#yearDropdown');
+        for(i=2023;i>=1905;i--){
+            year.innerHTML+=`<option>${i}</option`;
+            }
+        const k=document.getElementById('first-name')
+        document.getElementById('signup-b').onclick=function(){
+            if(k.value==''){
+                alert("please enter the first name")
+            }
+        }
+
+        const q=document.getElementById('last-name')
+        document.getElementById('signup-b').onclick=function(){
+            if(k.value==''){
+                alert("please enter the last name")
+            }
+        }
+
+        const r=document.getElementById('email')
+        document.getElementById('signup-b').onclick=function(){
+            if(k.value==''){
+                alert("please enter the  email")
+            }
+        }
+        
+    </script>
+</body>
+</html>
